@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>World Happiness Predictors</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/SGstyles.css">
+  <link rel="stylesheet" href="/static/css/d3Style.css">
+
+  <!-- EXTRA STYLING FOR PARALLAX -->  
+
+  <style>
+    body, html {
+      height: 100%;
+    }
+      
+    .parallax {
+      background-image: url('static/images/happy_circle.png');
+      height: 100%; 
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<!-- NAV BAR -->  
+
+  <nav id="nav" class="navbar fixed-top navbar-expand-lg navbar-light pl-5 pt-0 pb-0">
+  <a class="navbar-brand"  href="{{ url_for('index') }}">World Happiness Predictors</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown" >
+    <ul class="navbar-nav">
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ML Models
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{{ url_for('viz_map') }}">Random Forest</a>
+            <a class="dropdown-item" href="{{ url_for('viz_tree') }}">Multivariate Regression</a>
+            <a class="dropdown-item" href="{{ url_for('viz_bubble') }}">Feature Analysis (PCA)</a>
+        </div>
+      </li>     
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('conclusion') }}">Conclusions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('data_list') }}">Data</a>
+      </li>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('contributors') }}">Contributors</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- INTRO TEXT -->  
+
+<div class="parallax"></div>
+    
+<div style="height:650px;background-color:white;font-size:36px">
+    <h2 align="center" class= "pt-5">What Makes A Nation Happy?</h2>
+    <hr>
+
+    <div class="row single-post mt-5 no-gutters">
+      <div class="col-sm-12">
+        <p class="text-secondary">
+        Did you know that Finland is the happiest country in the world?  The United Nations Sustainable Development Solutions Network tracks this sentiment in their annual World Happiness Report.  Sampling citizens from 156 countries, the report asks people to rate their own level of happiness on a scale of 1 to 10.  
+        <br>
+        <br>
+        In this project, we investigate economic, political and social factors that might drive positive sentiment. Using various machine learning models, we will determine which of these factors are most important in predicting levels of happiness. 
+        <br>  
+        <br> 
+        <p class="text-hypothesis">
+        It is our hypothesis that key economic factors might be most influential, but other non-monetary social and political factors will also prove important. 
+        </p>
+      </div>
+    </div>
+</div>
+
+<div class="parallax"></div>
+
+</body>
+</html>
+
+<footer>&copy; Columbia Data Analytics Bootcamp - Final Project - October 2019</footer>
+
+</body>
