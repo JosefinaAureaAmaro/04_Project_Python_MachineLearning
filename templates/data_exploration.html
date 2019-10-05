@@ -78,25 +78,39 @@
         
         <!-- Header -->
         <section class="container">
-        <h2 class="my-5 text-center">Preliminary Assessment</h2>
-        <hr class="sep border-primary" role="presentation">
-            
-        <p>Before embarking on this analysis, we first needed to identify an accurate and consistent way of measuring happiness in countries around the globe.</p>
- 
-        <p>Since 2012, the United Nations Sustainable Development Solutions Network has been publishing The World Happiness Report, a study measuring happiness levels in 156 countries. The reports also investigate some of the underlying causes and policy implications of these sentiments.</p>
- 
-        <p>At the heart of the report is the Life Ladder Index, a self-reported measure of how happy a country’s citizens perceive themselves to be. The Life Ladder Index for a country is a weighted average from a representative sample of citizens responding to a life evaluation survey question as part of the Gallop World Poll. The question relies on the Cantril ladder, stating:</p>
-            
-        <blockquote class="blockquote">
-            <p class="mb-2">Please imagine a ladder with steps numbered from zero at the bottom to ten at the top. Suppose we say that the top of the ladder represents the best possible life for you and the bottom of the ladder represents the worst possible life for you. If the top step is 10 and the bottom step is 0, on which step of the ladder do you feel you personally stand at the present time?</p>
-        </blockquote>
-            
-        <p>Each respondent provides a score from 1 to 10, which is the range of the Life Ladder Index. For purposes of clarity, note that in this project we refer to the Life Ladder Index simply as the “Happiness Index”.</p>
         
-        <p>The dataset used to generate the report is available for download. We availed ourselves to data from all available countries for the years 2010-2017. This range represented years with the most robust Life Ladder Index information and aligned with the data availability of our other variable data sources.</p>
-            
-        <p>Each row represented data for one country for one year. Columns included the Life Ladder Index as well as 23 potential variables impacting that index. Of the variables provided, we removed several due to low data availability across countries. Ultimately for our analysis we retained the following data points:</p>
+                    <!--Header -->
+
+        <h2 class="my-5 text-center">Our Data Sources</h2>
+        <hr class="sep border-primary" role="presentation"> 
+
+
+         <!--Seperator-->
+         <div class="row">
+            <div class="col-sm-4">
+                 <a href="https://worldhappiness.report/" class="stretched-link">
+                    <img src="img/data_exp/whr.PNG" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="WHR Image">
+                    <h2 class="h5 text-center text-dark">World Happiness Report</h2>
+                </a>
+                <p class="card-text">"The World Happiness Report is a landmark survey of the state of global happiness that ranks 156 countries by how happy their citizens perceive themselves to be." - World Happiness Report</p>
+            </div>
+            <div class="col-sm-4">
+                 <a href="https://stats.oecd.org/" class="stretched-link">
+                    <img src="img/data_exp/oecd_stats.PNG" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="OECD">
+                    <h2 class="h5 text-center text-dark">OECD Statistics</h2>
+                </a>
+                <p class="card-text">The Organization for Economic Cooperation and Development (OECD) is a compilation of 34 demmocracies  with market economics and 70 non-member economices that has provided data to promote economic growth, prosperity, and sustainable development.</p>
+            </div>
+            <div class="col-sm-4">
+                 <a href="http://datatopics.worldbank.org/world-development-indicators/" class="stretched-link">
+                    <img src="img/data_exp/wb_wdi.PNG" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="WDI">
+                    <h2 class="h5 text-center text-dark">The World Bank (WDI)</h2>
+                </a>
+                <p class="card-text">The World Development Indicators is a compilation of internationally comparable statistics regarding global development. 1,600 data indicators that go back 50 years for 217 economies &amp; more than 40 country groups.</p>
+            </div>
+        </div>
         
+        <p></p>
         <h4>Data Columns Reviewed</h4>
         <table class="table mb-4">
             <tbody>
@@ -113,20 +127,28 @@
                     <td>Healthy Life Expectancy at Birth</td>
                 </tr>
                 <tr>
-                    <td>Life Ladder Index</td>
+                    <td>Happiness Index</td>
                     <td>Log GDP Per Capita</td>
                 </tr>
                 <tr>
-                    <td>Negative Affect of Survey</td>
+                    <td>Negative Affect</td>
                     <td>Perceptions of Corruption</td>
                 </tr>
                 <tr>
-                    <td>Positive Affect of Survey</td>
+                    <td>Positive Affect</td>
                     <td>Social Support</td>
                 </tr>
                 <tr>
                     <td>STD of Ladder by Country </td>
                     <td>GINI of Household Income</td>
+                </tr>
+                <tr>
+                    <td>Average Wages</td>
+                    <td>Average Hours Worked</td>
+                </tr>
+                <tr>
+                    <td>Population density</td>
+                    <td>Probability of dying at age 5-14 years</td>
                 </tr>
             </tbody>
         </table>    
@@ -140,7 +162,7 @@
         
                 <div class="row justify-content-lg-between align-items-lg-center py-4 py-lg-5">
                     <div class="col-lg-5 mb-4 mb-lg-0">
-                        <h2>Happiness Heat Map</h2>
+                        <h2>Happiness Choropleth Map</h2>
                         <hr class="sep border-primary ml-0 mb-3 text-left" role="presentation">
                         <p></p>
                     </div>
@@ -150,7 +172,7 @@
                 </div>
                 <div class="row justify-content-lg-between align-items-lg-center py-4 py-lg-5">
                     <div class="col-lg-5 order-lg-2 mb-4 mb-lg-0">
-                        <h2>The Happinesss Index</h2>
+                        <h2>Happiness Distribution</h2>
                         <hr class="sep border-primary ml-0 mb-3 text-left" role="presentation">
                         <!--                        <p>The theme includes a workflow to customize it easily, or you can simply use the static files.</p>-->
                     </div>

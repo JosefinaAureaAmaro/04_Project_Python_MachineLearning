@@ -58,7 +58,7 @@
             <div class="container">
                 <div class="row py-5">
                     <div class="col-lg-9">
-                        <h1 class="display-4 mb-4">Sofia Cavallo</h1>
+                        <h1 class="display-4 mb-4">Sofia C.</h1>
                         <p>Machine Learning Model Featured: <b>Multiple Linear Regression Analysis</b></p>
                         <p>Project Python Libraries: Pandas | Scikit-learn &amp; Statsmodels | Matplotlib </p>
                     </div>
@@ -105,12 +105,22 @@
                 <!--This is one long column-->
                 <div class="col-lg-9 order-lg-1">
                     <h2 id="hypothesis" class="py-3">Hypothesis</h2>
-                    <p>STILL NEED.</p>
+                    <p>I anticipated that factors that contribute to a social safety net would be a strong determinant of a country’s Life Ladder (or Happiness Index).</p>
                     
                     <h2 id="model_details" class="py-3">Model Details &amp; Objectives </h2>
-                    <p>Our group was interested in a handful of factors’ influence on a country’s Life Ladder (or Happiness index). Specifically, we wanted to test our hypothesis that the Life Ladder was strongly determined by the following 8 variables: GDP per capita, perceived social support, healthy life expectancy at birth, perceived freedom to make life choices, perceived generosity in others, perceptions of corruption, confidence in national government, and the country’s average GINI index. </p>
+                    <p><b>Multiple linear regression analysis</b> lent itself perfectly to our goal. In this method, “Y” is the continuous response variable (or the “dependent” variable), while X1, X2, X3… are the predictor variables (or the “independent” variables). This type of regression is also known as <b>Ordinary Least Squares regression (OLS)</b> because produces a function that estimates the relationship between the independent variables, by minimizing the sum of the squares in the difference between the observed and predicted values of the dependent variable, configured as a straight line.</p>
                     
-                    <p><b>Multiple linear regression analysis </b> lent itself perfectly to our goal. In this method, “Y” is the continuous response variable (or the “dependent” variable), while X1, X2, X3… are the predictor variables (or the “independent” variables). This type of regression is also known as <b>Ordinary Least Squares regression (OLS)</b> because produces a function that estimates the relationship between the independent variables, by minimizing the sum of the squares in the difference between the observed and predicted values of the dependent variable, configured as a straight line.</p>
+                    <p>To minimize errors in the model, we focused on 8 variables in our data set:</p>
+                    <ul>
+                        <li><b>X1:</b> GDP per capita</li>
+                        <li><b>X2:</b> Social Support</li>
+                        <li><b>X3:</b> Healthy Life Expectancy at Birth</li>
+                        <li><b>X4:</b> Freedom to Make Life Choices</li>
+                        <li><b>X5:</b> Generosity</li>
+                        <li><b>X6:</b> Perceptions of Corruption</li>
+                        <li><b>X7:</b> Confidence in National Government</li>
+                        <li><b>X8:</b> Country's Average GINI Index</li>
+                    </ul>
                     
                     
                     <h2 id="data_cleaning" class="py-3">Data Cleaning</h2>
@@ -126,7 +136,7 @@
                     
                     <h2 id="data_analysis" class="py-3">Data Analysis</h2>
                     
-                        <h2 class="h5 text-center text-dark">Ordinary Least Squares regression (OLS) Analysis</h2>
+                        <h2 class="h5 text-center text-dark">Statistical Summary</h2>
                         <img src="img/sofia/output1.PNG" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="OLS 1">
 
 <!--                        <h2 class="h5 text-center text-dark">Pairplot For Strongest Features</h2>-->
@@ -135,39 +145,35 @@
                     
 <!--                        <h2 class="h5 text-center text-dark">Wages vs. Happiness</h2>                    -->
                         <img src="img/sofia/output3.PNG" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="OLS 3">
-
-                    <h2 id="conclusion" class="py-3">Conclusion</h2>
-                    <p>Our R-squared measure, a figure between 0 and 100% that tells us how close the data is to the fitted regression line, is closer to 100% at of 0.741. This means that the model explains 74% of the variability of the response data around our mean, or that the model fits our data fairly well, though not perfectly well either.</p>
                     
-                    <p>Our coefficient values for each variable turned out as follows:</p>
-                    <ul>
-                        <li>GDP per capita: -0.0291</li>
-                        <li>Perceived Social Support: 0.1562</li>
-                        <li>Healthy Life Expectancy at Birth: 0.2699</li>
-                        <li>Perceived Freedom to Make Life Choices: 0.1791</li>
-                        <li>Perceived Generosity in Others: 0.2488</li>
-                        <li>Perceptions of Corruption: -0.2486</li>
-                        <li>Confidence in National Government: 0.1242</li>
-                        <li>The Country’s Average GINI Index: 0.1764</li>
+                    
+                    <p>The <b>coefficient value</b> signifies how much the mean of the dependent variable changes given a shift of one unit in the independent variable, while all of the other independent variables stay constant. A <b>positive</b>b> coefficient means that as the value of the independent variable increases, the mean of the dependent variable also increases. A <b>negative</b>b> coefficient indicates that as the independent variable increases, the dependent variable tends to decrease. </p>
+                    
+                    
+                    <p>Our coefficient values rank as follows (from most positive to most negative impact on Life Ladder):</p>
+                     <ul>
+                        <li><b>X1:</b> GDP per capita, <b>.27</b></li>
+                        <li><b>X2:</b> Social Support, <b>.25</b></li>
+                        <li><b>X3:</b> Healthy Life Expectancy at Birth, <b>.179</b></li>
+                        <li><b>X4:</b> Freedom to Make Life Choices, <b>.176</b></li>
+                        <li><b>X5:</b> Generosity, <b>.16</b></li>
+                        <li><b>X6:</b> Perceptions of Corruption, <b>.12</b></li>
+                        <li><b>X7:</b> Confidence in National Government, <b>-.03</b></li>
+                        <li><b>X8:</b> Country's Average GINI Index, <b>-.25</b></li>
                     </ul>
+                
+                    <p>The farther the negative coefficients get from 0, the more that variable brings down the Life Ladder with every one-unit increase. The further the positive coefficients get from 0, the more the variable raises the Life Ladder with every one-unit increase. Coefficients close to zero have minimal impact altogether. Therefore, <b>the more people’s children are likely to survive</b>, the happier they are. Conversely,<b>perceptions of corruption</b> bring down the mean Life Ladder. Interestingly, this dataset suggests <b>GDP per capita</b> has little to no bearing on Life Ladder.</p>
                     
-                    <p>The coefficient value signifies how much the mean of the dependent variable changes given a shift of one unit in the independent variable, while all of the other independent variables stay constant. A positive coefficient means that as the value of the independent variable increases, the mean of the dependent variable also increases. A negative coefficient indicates that as the independent variable increases, the dependent variable tends to decrease.</p>
+                    <p><b>R-squared</b> is a figure between 0 and 100% that tells us how close the data is to the fitted regression line. In the case of our data set, it is closer to 1.00 at 0.741. This means that the model explains 74% of the variability of the response data around our mean. So the model fits our data fairly well, though not perfectly well either. </p>
                     
-                    <p>Applied to our data set, healthy life expectancy at birth, if increased by one unit while all other independent variables stay the same, increases the mean of the Life Ladder (or Happiness Index) the most, followed by perceived generosity in others and perceived freedom to make choices.</p>
                     
-                    <p>Conversely, perceptions of corruption, if increased by one unit while all other independent variables stay the same, decreases the mean of the Life Ladder the most, followed by GDP per capita. </p>
-                    
-                    <p>This means that the more peoples’ children are likely to survive is the biggest indicator of a country’s happiness index, followed by the perception of kindness in one’s community and a sense of autonomy. Perceived government injustice and poverty, on the other hand, bring down the overall happiness of a country.</p>
-                    
-                     <h2 class="h5 text-center text-dark">Actual Values vs. Predicted Values</h2>
-                    <img src="img/sofia/output4.PNG" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="OLS 1">
-                    
-                    <p>To push our model further, we visualized the differences between the actual values of y and our predictions. Our graph shows a fairly compact scatter plot that tilts at a 45 degree angle. This slope, tending away from the 0 horizontal line, suggests that less of our X variables have an impact on y. The points closer to the 0 line would suggest that those variables are more closely correlated to y. With more time, our team would have assigned a different color to each X variable to visualize the distance of each one from the 0 line in this cluster and determining the most impactful ones. </p>
+                    <h2 id="conclusion" class="py-3">Conclusion</h2>
+                    <p>Multiple linear regression analysis proved to be a helpful way to quickly see the weight of a handful of variables on a single dependent variable. Applied to our data set, it suggests that <b>healthy life expectancy at birth (0.2699)</b>, followed by <b>generosity (0.2488)</b>, are the strongest determinant of a country’s happiness. Not surprisingly, the more <b>perceptions of corruption (-0.2486)</b>, the more the Life Ladder was brought down. Interestingly, <b>social support (0.1562)</b> ranked 5th of the 8 independent variables and <b>GDP per capita (-0.0291)</b> had a negligible importance. </p>
                     
                     
                     <h2 id="code" class="py-3">GitHub Code</h2>
-                    <p>Happiness Project: Random Forests (Top 3 Variables Only)</p>
-                    <script src="https://gist.github.com/MrScottGregory/d98dab2a7b15f184684305fdda794f10.js"></script>
+                    <p>Happiness Project: Multi Variant Linear Regression</p>
+                    <script src="https://gist.github.com/sofiacavallo/425fc2fdf83015c4cdaa050e58a2857b.js"></script>
             </div>
           </div>
         </div>
