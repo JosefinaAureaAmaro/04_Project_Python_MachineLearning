@@ -104,71 +104,63 @@
                <!-- Page Content -->
                 <!--This is one long column-->
                 <div class="col-lg-9 order-lg-1">
-                    <h2 id="hypothesis" class="py-3">Hypothesis</h2>
-                    <p>STILL NEED.</p>
-                    
+
                     <h2 id="model_details" class="py-3">Model Details &amp; Objectives </h2>
                     <p>There are many factors that affect directly or indirectly the general happiness of a country. Being such a subjective matter, knowing exactly what factors are the ones that influence the happiness of a population the most is a challenge. For my analysis I used the World Happiness report from 2019, this report contains information about a Happiness Score of each country which has been computed using the answers from a statistically representative survey.</p>
                     
-                    <p>DIDNT MENTION MODEL</p>
-                    
-                    
-                    <h2 id="data_cleaning" class="py-3">Data Cleaning</h2>
-                    <p>NEED</p>
 
-                    <h2 id="data_analysis" class="py-3">Data Analysis</h2>
+                    <h2 id="data_analysis" class="py-3">Data Cleaning &amp; Data Analysis</h2>
                     
-                        <p>As an outline the following steps were taken for the analysis:</p>
-                        <ul>
-                            <li>Data cleaning and preparation</li>
-                            <li>Union of two datasets</li>
-                            <li>Data analysis plotting information on a world map</li>
-                            <li>Creation of a Regression model to predict the Happiness Score</li>
-                            <li>Evaluation of a Regression model</li>
-                        </ul>
-                        
-                        <p>The Heatmap below shows the correlation of any variable to another. For instance, we see that the Freedom score and Happiness Score are highly correlated, just like the Life Expectancy and GDP are.</p>
-                    
-                        <h2 class="h5 text-center text-dark">Correlation Heat Map</h2>
-                        <img src="img/carolina/PCA.svg" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="PCA">
-                    
-                        <p>This plot is showing some very clear conclusions. The first noticeable fact is that the Happiness Score is highly correlated with positive effect of the country. The positive affect is the average measurement of happiness, laughter and enjoyment from polls given to citizens of each country. The positive affect, in turn, is also highly correlated with Freedom. Knowing these two facts, it's reasonable to confirm that freedom allows people to laugh, and enjoy their everyday lives therefore impacting the Happiness Score of the country.</p>
-                    
-                        <p>On the other hand, the indicator Perceptions of corruption is inversely correlated, in general with the majority of the other indicators, including the happiness score. It's logic to confirm, then, that the corrupt countries cause a decrease in the happiness of the population.</p>
-                    
-                        <p>Since I wanted to predict the happiness score of each country from its indicators,  I decided to do a linear regression and some polynomial regressions of different degrees, this can be seen below.</p>
+                    <p>As an outline the following steps were taken for the analysis:</p>
+                    <ul>
+                        <li>Data cleaning and preparation</li>
+                        <li>Union of two datasets</li>
+                        <li>Data analysis plotting information on a world map</li>
+                        <li>Creation of a Regression model to predict the Happiness Score</li>
+                        <li>Evaluation of a Regression model</li>
+                    </ul>
 
-<!--                        <h2 class="h5 text-center text-dark">Wages vs. Happiness</h2>                    -->
-                        <img src="img/sofia/output3.PNG" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="OLS 3">
+                    <p>The Heatmap below shows the correlation of any variable to another. For instance, we see that the Freedom score and Happiness Score are highly correlated, just like the Life Expectancy and GDP are.</p>
+
+                    <h2 class="h5 text-center text-dark">Correlation Heat Map</h2>
+                    <img src="img/carolina/PCA.svg" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="PCA">
+
+                    <p>This plot is showing some very clear conclusions. The first noticeable fact is that the Happiness Score is highly correlated with positive effect of the country. The positive affect is the average measurement of happiness, laughter and enjoyment from polls given to citizens of each country. The positive affect, in turn, is also highly correlated with Freedom. Knowing these two facts, it's reasonable to confirm that freedom allows people to laugh, and enjoy their everyday lives therefore impacting the Happiness Score of the country.</p>
+
+                    <p>On the other hand, the indicator Perceptions of corruption is inversely correlated, in general with the majority of the other indicators, including the happiness score. It's logic to confirm, then, that the corrupt countries cause a decrease in the happiness of the population.</p>
+
+                    <p>Since I wanted to predict the happiness score of each country from its indicators,  I decided to do a linear regression and some polynomial regressions of different degrees, this can be seen below.</p>
+
+                     <div class="row">
+                        <div class="col-sm-6">
+                                <img src="img/carolina/regression%20deliver%20quality.svg" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="reg 1">
+                        </div>
+                        <div class="col-sm-6">
+                                <img src="img/carolina/regression%20democratic%20quality.svg" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="reg 2">
+                        </div>
+                        <div class="col-sm-6">
+                                <img src="img/carolina/regression%20freedom.svg" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="reg 3">
+                        </div>
+                        <div class="col-sm-6">
+                                <img src="img/carolina/regression%20Gallup.svg" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="reg 4">
+                        </div>
+                        <div class="col-sm-6">
+                                <img src="img/carolina/regression%20GINI%20Index%20World%20Bank%20Estimate.svg" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="reg5">
+                         </div>
+                        <div class="col-sm-6">
+                                <img src="img/carolina/regression%20most%20people%20can%20be%20trusted.svg" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="reg6">
+                         </div>
+                    </div>
+                    
+                    <p>These plots can show us how adjusted the regressions are with the data using only an indicator each time. All the columns were used to predict the happiness score, in order to plot the regression result line I performed PCA to the data. PCA finds the principal components of data, basically it reduces the data down into its basic components, stripping away any unnecessary parts. By applying PCA to the data we obtained a single “feature” that allowed us to represent all the attribute columns in a single axis.</p>
 
                     <h2 id="conclusion" class="py-3">Conclusion</h2>
-                    <p>Our R-squared measure, a figure between 0 and 100% that tells us how close the data is to the fitted regression line, is closer to 100% at of 0.741. This means that the model explains 74% of the variability of the response data around our mean, or that the model fits our data fairly well, though not perfectly well either.</p>
-                    
-                    <p>Our coefficient values for each variable turned out as follows:</p>
                     <ul>
-                        <li>GDP per capita: -0.0291</li>
-                        <li>Perceived Social Support: 0.1562</li>
-                        <li>Healthy Life Expectancy at Birth: 0.2699</li>
-                        <li>Perceived Freedom to Make Life Choices: 0.1791</li>
-                        <li>Perceived Generosity in Others: 0.2488</li>
-                        <li>Perceptions of Corruption: -0.2486</li>
-                        <li>Confidence in National Government: 0.1242</li>
-                        <li>The Country’s Average GINI Index: 0.1764</li>
+                        <li>The regression functions are fitting properly the distribution of the data.</li>
+                        <li>Increasing the degree of the polynomial function can cause better results, but also the appearance of overfitting.</li>
+                        <li>Happiness Ranking basically depends on Economy. Countries having strong GDP rate are happiest countries indeed.</li>
+                        <li>Happiness score depends on family, health, freedom, trust in govt. etc. All of these terms have a great linear relationship with happiness score.</li>
                     </ul>
-                    
-                    <p>The coefficient value signifies how much the mean of the dependent variable changes given a shift of one unit in the independent variable, while all of the other independent variables stay constant. A positive coefficient means that as the value of the independent variable increases, the mean of the dependent variable also increases. A negative coefficient indicates that as the independent variable increases, the dependent variable tends to decrease.</p>
-                    
-                    <p>Applied to our data set, healthy life expectancy at birth, if increased by one unit while all other independent variables stay the same, increases the mean of the Life Ladder (or Happiness Index) the most, followed by perceived generosity in others and perceived freedom to make choices.</p>
-                    
-                    <p>Conversely, perceptions of corruption, if increased by one unit while all other independent variables stay the same, decreases the mean of the Life Ladder the most, followed by GDP per capita. </p>
-                    
-                    <p>This means that the more peoples’ children are likely to survive is the biggest indicator of a country’s happiness index, followed by the perception of kindness in one’s community and a sense of autonomy. Perceived government injustice and poverty, on the other hand, bring down the overall happiness of a country.</p>
-                    
-                     <h2 class="h5 text-center text-dark">Actual Values vs. Predicted Values</h2>
-                    <img src="img/sofia/output4.PNG" class="img-fluid img-thumbnail img-thumbnail-hover mb-4" alt="OLS 1">
-                    
-                    <p>To push our model further, we visualized the differences between the actual values of y and our predictions. Our graph shows a fairly compact scatter plot that tilts at a 45 degree angle. This slope, tending away from the 0 horizontal line, suggests that less of our X variables have an impact on y. The points closer to the 0 line would suggest that those variables are more closely correlated to y. With more time, our team would have assigned a different color to each X variable to visualize the distance of each one from the 0 line in this cluster and determining the most impactful ones. </p>
-                    
                     
                     <h2 id="code" class="py-3">GitHub Code</h2>
                     <p>Happiness Project: Happiness Factors Reviewed (PCA)</p>
